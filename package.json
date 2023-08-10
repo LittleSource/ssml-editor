@@ -1,0 +1,30 @@
+{
+  "name": "ssml-editor",
+  "private": false,
+  "version": "0.0.1",
+  "description": "一个简单的组件库",
+  "main": "ssml-editor.js",
+  "keywords": [
+    "ssml",
+    "ssml-editor",
+    "edit",
+    "voice",
+    "rich-text"
+  ],
+  "author": "LittleYuan",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
+  }
+}

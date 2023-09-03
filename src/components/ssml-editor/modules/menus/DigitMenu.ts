@@ -1,6 +1,6 @@
 import type { IDomEditor, IDropPanelMenu } from '@wangeditor/editor'
 import { jr } from '../utils/transform'
-import { ElementType } from '../enum/el-type'
+import { ElementType } from '../custom-types'
 
 class DigitMenu implements IDropPanelMenu {
   public title = ''

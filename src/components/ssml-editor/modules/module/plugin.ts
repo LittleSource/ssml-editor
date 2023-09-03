@@ -3,7 +3,7 @@
  */
 import type { IDomEditor } from '@wangeditor/editor'
 import { DomEditor } from '@wangeditor/editor'
-import { existsElType } from '../enum/el-type'
+import { existsElType } from '../element/index'
 
 function withTag<T extends IDomEditor>(editor: T) {
   const { insertText, isInline, isVoid } = editor

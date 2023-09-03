@@ -1,5 +1,5 @@
 import type { IDomEditor, IDropPanelMenu } from '@wangeditor/editor'
-import { ElementType } from '../enum/el-type'
+import { ElementType } from '../custom-types'
 
 export const $tags = [
   { id: 0, label: '连续', time: '50ms' },

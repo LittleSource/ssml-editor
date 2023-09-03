@@ -1,6 +1,6 @@
 import type { IDomEditor, IDropPanelMenu } from '@wangeditor/editor'
-import type { PolyphoneElement } from '../enum/el-type'
-import { ElementType } from '../enum/el-type'
+import type { CustomElement } from '../custom-types'
+import { ElementType } from '../custom-types'
 import type { PolyphoneData } from '../utils/pinyin'
 import { convertSoftlyTo5, getElement, getPolyphoneData } from '../utils/pinyin'
 
@@ -50,7 +50,7 @@ export default class PolyphoneMenu implements IDropPanelMenu {
     this.polyphoneData.forEach((item) => {
       const id = new Date().getTime()
       const itemElem = getElement(item, id, (_, pinyinShow) => {
-        const node: PolyphoneElement = {
+        const node: CustomElement = {
           type: 'polyphone',
           id,
           originWord: item.word,
@@ -83,7 +83,7 @@ export default class PolyphoneMenu implements IDropPanelMenu {
 }
 
 export const polyphoneMenuConf = {
-  key: ElementType.PINYIN,
+  key: ElementType.POLYPHONE,
   factory() {
     return new PolyphoneMenu()
   },

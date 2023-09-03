@@ -31,11 +31,12 @@ onMounted(() => {
 const editorRef = shallowRef<IDomEditor>()
 
 const toolbarConfig = {
-  toolbarKeys: ['undo', 'redo', 'pause', 'polyphoneMenu', 'digit'],
+  toolbarKeys: ['undo', 'redo', 'pause', 'polyphone', 'digit'],
 }
 
 const editorConfig = {
-  placeholder: '请输入口播内容',
+  placeholder: '请输入内容',
+  maxLength: props.maxLength,
 }
 
 // 组件销毁时，也及时销毁编辑器
@@ -97,7 +98,11 @@ function handleChange() {
 }
 
 // 将粘贴的内容转换为纯文本
-function customPaste(editor: IDomEditor, e: ClipboardEvent, callback: (prohibit: boolean) => void) {
+function customPaste(
+  editor: IDomEditor,
+  e: ClipboardEvent,
+  callback: (prohibit: boolean) => void,
+) {
   const text = e.clipboardData?.getData('text/plain') || ''
   editor.insertText(text)
   e.preventDefault()
@@ -133,12 +138,16 @@ defineExpose({
 <template>
   <div>
     <div style="border: 1px solid #eaf1ff">
-      <Toolbar id="toolbar" style="border-bottom: 1px solid #eaf1ff" :editor="editorRef" :default-config="toolbarConfig" />
+      <Toolbar
+        id="toolbar"
+        :editor="editorRef"
+        :default-config="toolbarConfig"
+      />
       <Editor
-        style="height: 38vh; overflow-y: hidden"
+        class="editor"
+        mode="simple"
         :model-value="props.valueHtml"
         :default-config="editorConfig"
-        mode="simple"
         @on-created="handleCreated"
         @on-change="handleChange"
         @custom-paste="customPaste"
@@ -149,4 +158,11 @@ defineExpose({
 
 <style lang="scss">
 @import "./index.scss";
+#toolbar{
+  border-bottom: 1px solid #eaf1ff;
+}
+.editor{
+  height: 38vh !important;
+  overflow-y: hidden;
+}
 </style>

@@ -3,15 +3,14 @@ import { h } from 'snabbdom'
 import type { IDomEditor, SlateDescendant, SlateElement } from '@wangeditor/editor'
 import { SlateTransforms } from '@wangeditor/editor'
 import type { DOMElement } from '../module/dom'
+import { ElementType } from '../custom-types'
 import type { CustomElement } from '../custom-types'
-import type { PolyphoneElement } from '../enum/el-type'
-import { ElementType } from '../enum/el-type'
 import type { PolyphoneData } from '../utils/pinyin'
 import { getElement, getPolyphoneData } from '../utils/pinyin'
 
 // 多音字
 const PolyphoneEle: CustomElement = {
-  type: ElementType.PAUSE,
+  type: ElementType.POLYPHONE,
   dataset: {},
   children: [],
   renderElem: (elem: SlateElement, children: VNode[] | null, editor: IDomEditor): VNode => {

@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import PauseElement from './element/pause'
-import DigitElement from './element/digit'
-import PolyphoneElement from './element/polyphone'
-
-// 默认返回值
 interface EmptyText {
   text: ''
 }
+
+export enum ElementType {
+  PAUSE = 'pause', // 插入停顿
+  DIGIT = 'digit', // 数字符号
+  POLYPHONE = 'polyphone', // 多音字
+}
+
 /**
  * @description 自定义标签数据结构
  */
@@ -19,5 +21,3 @@ export interface CustomElement {
   parseHtml: Function
   elemToHtml?: Function
 }
-
-export const Elements: Array<CustomElement> = [PauseElement, DigitElement, PolyphoneElement]

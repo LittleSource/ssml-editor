@@ -11,13 +11,13 @@ import ssmlEditor from '@/components/ssml-editor/index.vue'
 </template>
 
 <style lang="scss" scoped>
-.container{
+.container {
   width: 100vw;
   height: 100vh;
   display: flex;
   padding: 50px;
 
-  .ssml{
+  .ssml {
     width: 60vw;
   }
 }
